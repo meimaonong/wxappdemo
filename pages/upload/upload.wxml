@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="upload-zone" bindtap="chooseImg">
+  <text wx:if="{{!imgUrl}}">+</text>
+  <image wx:if="{{imgUrl}}" src="{{imgUrl}}" 
+    mode="aspectFit" catchtap="previewAction"></image>
+  </view>
+
+  <view class="publish-btn">
+  <navigator url="/pages/publish/publish" open-type="reLaunch">reLaunch</navigator>
+  </view> 
+
+
+</view>

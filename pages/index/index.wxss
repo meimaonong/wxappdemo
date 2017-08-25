@@ -1,0 +1,174 @@
+/**index.wxss**/
+page {
+  background-color: #f0f0f0;
+}
+
+.list-date {
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #999;
+  font-size: 20rpx;
+}
+
+.list-date text {
+  display: inline-block;
+  height: 70rpx;
+  position: relative;
+}
+.list-date text::before, .list-date text::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 34rpx;
+  height: 1rpx;
+  overflow: hidden;
+  width: 40rpx;
+  background: #aaa;
+}
+
+.list-date text::before{
+  right: 110%;
+}
+.list-date text::after{
+  left: 110%;
+}
+
+.list-outer-w {
+  padding-bottom: 168rpx;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 128rpx;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-item .list-icon {
+  display: block;
+  margin: 0 20rpx;
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  border-radius: 5rpx;
+  font-size: 20rpx;
+}
+
+.list-item .list-icon.android {
+  line-height: 30rpx;
+}
+
+.list-item .list-pname {
+  color: #333;
+  font-size: 30rpx;
+  width: 200rpx;
+}
+
+.list-item-buy .list-icon {
+  border: 1rpx solid #3cafff;
+  color: #3cafff;
+}
+
+.list-item-sel .list-icon {
+  border: 1rpx solid #ff3c3c;
+  color: #ff3c3c;
+}
+
+.list-p1, .list-p2 {
+  display: flex;
+  line-height: 42rpx;
+  flex-direction: column;
+}
+.list-p1 {
+  width: 165rpx;
+}
+.list-p2 {
+  width: 155rpx;
+}
+
+.list-price {
+  font-size: 30rpx;
+  color: #ff3c3c;
+}
+
+.list-type-w {
+  height: 42rpx;
+  overflow: hidden;
+}
+
+.list-type {
+  font-size: 24rpx;
+  color: #999;
+  float: left;
+  display: flex;
+}
+
+.list-type.android {
+  line-height: 48rpx;
+}
+
+.item-icon {
+  width: 22rpx;
+  height: 24rpx;
+  position: relative;
+  top: 9rpx;
+  float: left;
+  margin-right: 10rpx;
+}
+
+.list-num {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.list-place-w {
+  height: 42rpx;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.list-place {
+  font-size: 24rpx;
+  color: #999;
+  float: left;
+}
+.list-place.android {
+  line-height: 48rpx;
+}
+
+.list-status {
+  width: 106rpx;
+  height: 35rpx;
+}
+.list-status2 {
+  width: 107rpx;
+  height: 85rpx;
+}
+
+.list-arrow {
+  width: 16rpx;
+  height: 28rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+
+.list-item:nth-child(n + 2) {
+  margin-top: -1rpx;
+}
+
+.publish-btn {
+  width: 100%;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #3cafff;
+}

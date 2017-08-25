@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/publish/publish",
+    "pages/upload/upload",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#3cafff",
+    "navigationBarTitleText": "第5城交易小程序",
+    "navigationBarTextStyle":"#fff"
+  }
+}

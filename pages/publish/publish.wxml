@@ -1,0 +1,118 @@
+<!--index.wxml-->
+<view class="container">
+
+<view class="group-w">
+
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon1.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">盘口类型</text>
+    <view class="group-op">
+    <button class="cm-btn {{isBuy && 'active'}}" data-type="isBuy" bindtap="setType">买</button>
+    <button class="cm-btn {{isSell && 'active'}}" data-type="isSell"  bindtap="setType">卖</button>
+    </view>
+  </view>
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon2.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">货物类型</text>
+    <view class="group-op">
+    <button class="cm-btn {{isNow && 'active'}}" data-type="isNow" bindtap="setGood">现 货</button>
+    <button class="cm-btn {{isFar && 'active'}}" data-type="isFar" bindtap="setGood">远 月</button>
+    </view>
+  </view>
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon3.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">交割时间</text>
+    <view class="group-op">
+    
+    </view>
+  </view>
+
+</view>
+
+<view class="group-w">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon4.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">品名</text>
+    <view class="group-op">
+      <view class="cm-txt">
+      {{array[index]}}
+      </view>
+    </view>
+  </view>
+  </picker>
+  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}" style="margin-top:-1rpx;">
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon5.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">含量</text>
+    <view class="group-op">
+    <view class="cm-txt">
+      {{array2[index2]}}
+    </view>
+    </view>
+  </view>
+  </picker>
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon6.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">数量</text>
+    <view class="group-op">
+      <input placeholder="请点击输入吨数" class="input"/>
+      <text class="cm-txt">吨</text>
+    </view>
+  </view>
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon7.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">单价</text>
+    <view class="group-op">
+      <input placeholder="请点击输入单价" class="input"/>
+      <text class="cm-txt">元/吨</text>
+    </view>
+  </view>
+  <picker bindchange="bindPickerChange3" value="{{index3}}" range="{{array3}}" style="margin-top:-1rpx;">
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon8.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">库区</text>
+    <view class="group-op">
+    <text class="cm-txt">{{array3[index3]}}</text>
+    </view>
+  </view>
+  </picker>
+
+</view>
+
+<view class="group-w">
+
+  <view class="group-item">
+    <view class="icon-w">
+    <image src="/public/img/publish/icon9.png" mode="aspectFit" class="group-icon"></image>
+    </view>
+    <text class="group-label">邀请商家</text>
+    <view class="group-op">
+    <text class="cm-txt">11家</text>
+    <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+    </view>
+  </view>
+
+</view>
+
+<view class="publish-btn">
+<navigator url="/pages/upload/upload">发布</navigator>
+</view> 
+
+</view>

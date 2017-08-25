@@ -1,0 +1,315 @@
+<!--index.wxml-->
+<view class="container">
+
+<view class="list-outer-w">
+
+<view class="list-w" wx:for="{{list}}" wx:key="index" wx:for-item="item">
+
+  <view class="list-date"><text>{{item.date}}</text></view>
+
+  <view class="list-item-w">
+  
+    <view class="list-item {{itemName.type==1?'list-item-buy': 'list-item-sel'}}" wx:for="{{item.listData}}"  wx:key="idx" wx:for-index="idx" wx:for-item="itemName">
+      <text class="list-icon {{platform}}">{{itemName.type==1?'买': '卖'}}</text>
+      <text class="list-pname">{{itemName.product_name}}</text>
+      <view class="list-p1">
+        <text class="list-price">￥{{itemName.price}}</text>
+        <view class="list-type-w" wx:if="{{itemName.trade_type==1}}">
+        <image src="/public/img/type-icon.png" mode="aspectFit" class="item-icon"></image>
+        <text class="list-type {{platform}}">现货</text>
+        </view>
+        <view class="list-type-w" wx:else>
+        <text class="list-type {{platform}}">{{itemName.time}}</text>
+        </view>
+      </view>
+      <view class="list-p2">
+        <text class="list-num">{{itemName.num}}T</text>
+        <view class="list-place-w">
+        <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+        <text class="list-place {{platform}}">{{itemName.place}}</text>
+        </view>
+      </view>
+      <image src="/public/img/status/status{{itemName.status}}.png" mode="aspectFit" class="{{itemName.status == 5 ? 'list-status2' : 'list-status'}}"></image>
+      <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+
+    </view>
+
+  
+  </view>
+
+</view>
+
+</view>
+
+  <!-- <view class="list-outer-w">
+  
+    <view class="list-w">
+
+      <view class="list-date"><text>2017年8月9日</text></view>
+
+      <view class="list-item-w">
+      
+        <view class="list-item list-item-buy">
+          <text class="list-icon {{platform}}">买</text>
+          <text class="list-pname">甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <image src="/public/img/type-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-type {{platform}}">现货</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status1.png" mode="aspectFit" class="list-status"></image>
+          <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+
+        </view>
+
+        <view class="list-item list-item-sel">
+          <text class="list-icon {{platform}}">卖</text>
+          <text class="list-pname">溶剂二甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <text class="list-type {{platform}}">2017-08 下</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status2.png" mode="aspectFit" class="list-status"></image>
+          <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+        </view>
+      
+      </view>
+
+    </view>
+
+    <view class="list-w">
+
+      <view class="list-date"><text>2017年8月9日</text></view>
+
+      <view class="list-item-w">
+      
+        <view class="list-item list-item-buy">
+          <text class="list-icon {{platform}}">买</text>
+          <text class="list-pname">甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <image src="/public/img/type-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-type {{platform}}">现货</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status5.png" mode="aspectFit" class="list-status2"></image>
+                  <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+
+        </view>
+
+        <view class="list-item list-item-sel">
+          <text class="list-icon {{platform}}">卖</text>
+          <text class="list-pname">溶剂二甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <text class="list-type {{platform}}">2017-08 下</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status4.png" mode="aspectFit" class="list-status"></image>
+          <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+        </view>
+      
+      </view>
+
+      
+
+    </view>
+
+    <view class="list-w">
+
+      <view class="list-date"><text>2017年8月9日</text></view>
+
+      <view class="list-item-w">
+      
+        <view class="list-item list-item-buy">
+          <text class="list-icon {{platform}}">买</text>
+          <text class="list-pname">甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <image src="/public/img/type-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-type {{platform}}">现货</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status5.png" mode="aspectFit" class="list-status2"></image>
+                  <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+
+        </view>
+
+        <view class="list-item list-item-sel">
+          <text class="list-icon {{platform}}">卖</text>
+          <text class="list-pname">溶剂二甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <text class="list-type {{platform}}">2017-08 下</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status3.png" mode="aspectFit" class="list-status"></image>
+          <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+        </view>
+      
+      </view>
+
+    </view>
+
+    <view class="list-w">
+
+      <view class="list-date"><text>2017年8月9日</text></view>
+
+      <view class="list-item-w">
+      
+        <view class="list-item list-item-buy">
+          <text class="list-icon {{platform}}">买</text>
+          <text class="list-pname">甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <image src="/public/img/type-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-type {{platform}}">现货</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status5.png" mode="aspectFit" class="list-status2"></image>
+                  <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+
+        </view>
+
+        <view class="list-item list-item-sel">
+          <text class="list-icon {{platform}}">卖</text>
+          <text class="list-pname">溶剂二甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <text class="list-type {{platform}}">2017-08 下</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status3.png" mode="aspectFit" class="list-status"></image>
+          <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+        </view>
+      
+      </view>
+
+    </view>
+
+    <view class="list-w">
+
+      <view class="list-date"><text>2017年8月9日</text></view>
+
+      <view class="list-item-w">
+      
+        <view class="list-item list-item-buy">
+          <text class="list-icon {{platform}}">买</text>
+          <text class="list-pname">甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <image src="/public/img/type-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-type {{platform}}">现货</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status5.png" mode="aspectFit" class="list-status2"></image>
+                  <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+
+        </view>
+
+        <view class="list-item list-item-sel">
+          <text class="list-icon {{platform}}">卖</text>
+          <text class="list-pname">溶剂二甲苯</text>
+          <view class="list-p1">
+            <text class="list-price">￥5200</text>
+            <view class="list-type-w">
+            <text class="list-type {{platform}}">2017-08 下</text>
+            </view>
+          </view>
+          <view class="list-p2">
+            <text class="list-num">500T</text>
+            <view class="list-place-w">
+            <image src="/public/img/place-icon.png" mode="aspectFit" class="item-icon"></image>
+            <text class="list-place {{platform}}">江阴</text>
+            </view>
+          </view>
+          <image src="/public/img/status/status3.png" mode="aspectFit" class="list-status"></image>
+          <image src="/public/img/arrow-icon.png" mode="aspectFit" class="list-arrow"></image>
+        </view>
+      
+      </view>
+
+    </view>
+
+
+  </view> -->
+
+   <view class="publish-btn">
+   <navigator url="/pages/publish/publish?title=qcc">发布新需求</navigator>
+   </view> 
+
+</view>
