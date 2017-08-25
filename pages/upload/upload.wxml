@@ -8,7 +8,7 @@
   </view>
 
   <view class="publish-btn">
-  <navigator url="/pages/publish/publish" open-type="reLaunch">reLaunch</navigator>
+  <navigator url="/pages/publish/publish" open-type="navigateBack">reLaunch</navigator>
   </view> 
 
 
